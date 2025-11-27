@@ -4,7 +4,7 @@ Puzzle-Based Learning Game: Integrating Game Innovation and Logical Enhancement
 
 # Description / Overview
 
-This project is a Java-based console game designed to strengthen problem-solving, critical thinking, and vocabulary skills. It features three main puzzle modes—Word Cross, Word Scramble, and Logic Riddle Adventure—each offering multiple difficulty levels. The program provides learners with fun and interactive challenges while enhancing logical reasoning, pattern recognition, and deductive thinking.
+This program is designed to help a user to enhance their logical thinking skills because this console-based program consists of three games a puzzle-based games, like word cross, word scrabble and a logic ride riddle. It’s combined a fun of interactive games with the benefits of logical thinking and problem-solving development. Through the integration of innovative game mechanics, the system encourages users to think strategically, solve problems efficiently, and apply logic in various scenarios.
 
 # OOP Concepts Applied
 
@@ -122,8 +122,7 @@ Correct! If the condition is met, the result follows.
 
 # Author and Acknowledgement
 
-Author: Enrico A. Alvaro
-Special thanks to instructors, peers, and references used in studying logic, Java, and OOP concepts.
+This project would not have been possible without the dedication, effort, and collaborative skills of Enrico Alvaro, Andrei Lusterio, and Kayelene Amaira Vital. Specially thanks to our instructor Sir Emmanuel Charlie Enriquez who provided a clear instruction and value feedback throughout the development of this work.
 
 # Other Sections You May Include
 # Future Enhancements
