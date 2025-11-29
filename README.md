@@ -4,7 +4,7 @@ Puzzle-Based Learning Game: Integrating Game Innovation and Logical Enhancement
 
 # Description / Overview
 
-• This program is designed to help a user to enhance their logical thinking skills because this console-based program consists of three games a puzzle-based games, like word cross, word scrabble and a logic ride riddle. It’s combined a fun of interactive games with the benefits of logical thinking and problem-solving development. Through the integration of innovative game mechanics, the system encourages users to think strategically, solve problems efficiently, and apply logic in various scenarios.
+• This program is designed to help a user to enhance their logical thinking skills because this console-based program consists of three games a puzzle-based games, like               word cross, word scrabble and a logic ride riddle. It’s combined a fun of interactive games with the benefits of logical thinking and problem-solving development.           Through the integration of innovative game mechanics, the system encourages users to think strategically, solve problems efficiently, and apply logic in various             scenarios.
 
 # OOP Concepts Applied
 
@@ -80,11 +80,11 @@ Main Classes and Roles
 
 # Steps
 
-    1. Compile all Java files:
+1. Compile all Java files:
 
-    2. javac *.java
+2. javac *.java
 
-    3. Run the main program: java Logic_Enhancement
+3. Run the main program: java Logic_Enhancement
 
 4. Use the menu to select from:
 
