@@ -4,7 +4,7 @@ Puzzle-Based Learning Game: Integrating Game Innovation and Logical Enhancement
 
 # Description / Overview
 
-• This program is designed to help a user to enhance their logical thinking skills because this console-based program consists of three games a puzzle-based games, like               word cross, word scrabble and a logic ride riddle. It’s combined a fun of interactive games with the benefits of logical thinking and problem-solving development.           Through the integration of innovative game mechanics, the system encourages users to think strategically, solve problems efficiently, and apply logic in various             scenarios.
+This program is designed to help a user to enhance their logical thinking skills because this console-based program consists of three games a puzzle-based games, like               word cross, word scrabble and a logic ride riddle. It’s combined a fun of interactive games with the benefits of logical thinking and problem-solving development.           Through the integration of innovative game mechanics, the system encourages users to think strategically, solve problems efficiently, and apply logic in various             scenarios.
 
 # OOP Concepts Applied
 
