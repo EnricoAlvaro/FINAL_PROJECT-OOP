@@ -116,9 +116,7 @@ Step 4: Exit
 
 # Author and Acknowledgement
 
-• This project would not have been possible without the dedication, effort, and collaborative skills of Enrico Alvaro, Andrei Lusterio, and Kayelene Amaira Vital. Special thanks to our instructor Sir Emmanuel Charlie Enriquez who provided clear instructions and valuable feedback throughout the development of this work.
-
-# Other Sections You May Include
+This project would not have been possible without the dedication, effort, and collaborative skills of Enrico Alvaro, Andrei Lusterio, and Kayelene Amaira Vital. Special thanks to our instructor Sir Emmanuel Charlie Enriquez who provided clear instructions and valuable feedback throughout the development of this work.
 
 # Future Enhancements
 
