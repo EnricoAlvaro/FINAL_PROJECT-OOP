@@ -244,19 +244,19 @@ class GameRiddle {
             riddles = new Riddle[] {
                 new DeductiveRiddle(
                     "If it rains, the ground is wet. It is raining. Is the ground wet?",
-                    "yes", "Think about cause and effect.", "If the condition is met, the result follows."
+                    "yes", "Think about cause and effect.", "Because rain (the cause) directly leads to the ground getting wet (the effect).."
                 ),
                 new SyllogismRiddle(
                     "All cats are mammals. Some mammals are pets. Are all cats pets?",
-                    "no", "Not all mammals are pets.", "Middle term not distributed."
+                    "no", "Not all mammals are pets.", "All cats are mammals and some mammals are pets, not all mammals are pets."
                 ),
                 new DeductiveRiddle(
                     "David's parents have three sons: Snap, Crackle, and what is the name of the third son?",
-                    "David", "Think about the riddle setup.", "Trick riddle relying on deductive reasoning."
+                    "David", "Think about the riddle setup.", "The riddle states that David's parents have three sons: Snap, Crackle, and David. The third son is David himself."
                 ),
                 new SyllogismRiddle(
                     "What can you break, even if you never pick it up or touch it?",
-                    "A promise", "Can be broken without contact.", "Intangible thing."
+                    "A promise", "Can be broken without contact.", "Because promises are intangible agreements that can be broken through actions or words without physically touching or picking up anything."
                 )
             };
             break;
@@ -265,7 +265,7 @@ class GameRiddle {
             riddles = new Riddle[] {
                 new DeductiveRiddle(
                     "If all roses are flowers and some flowers fade quickly, do all roses fade quickly?",
-                    "no", "Think about the logic.", "Conclusion doesn't follow from premise."
+                    "no", "Think about the logic.", "All roses are flowers, and some flowers fade quickly, but not all flowers do, so it's invalid to assume all roses fade quickly."
                 ),
                 new SyllogismRiddle(
                     "All men are mortal. Socrates is a man. Therefore, Socrates is mortal. What type of reasoning is this?",
@@ -273,7 +273,7 @@ class GameRiddle {
                 ),
                 new DeductiveRiddle(
                     "If A > B and B > C, then A > C. Is this always true?",
-                    "yes", "Transitive property.", "Yes, transitive inequality."
+                    "yes", "Transitive property.", "Yes, transitive inequality it states that if one quantity is greater than a second, and the second is greater than a third, then the first is greater than the third."
                 ),
                 new SyllogismRiddle(
                     "What goes up but never comes down?",
@@ -286,19 +286,19 @@ class GameRiddle {
             riddles = new Riddle[] {
                 new DeductiveRiddle(
                     "If all roses are flowers and some flowers fade quickly, do all roses fade quickly?",
-                    "no", "Think about the logic.", "Conclusion doesn't follow."
+                    "no", "Think about the logic.", "Since “some flowers” fade quickly, it doesn’t mean that all roses are included in that group."
                 ),
                 new SyllogismRiddle(
                     "All men are mortal. Socrates is a man. Therefore, Socrates is mortal. What type of reasoning is this?",
-                    "syllogism", "Classic example.", "Syllogism."
+                    "syllogism", "Classic example.", "It’s a classic example because the conclusion logically follows from the premises."
                 ),
                 new DeductiveRiddle(
                     "If A > B and B > C, then A > C. Is this always true?",
-                    "yes", "Transitive property.", "Yes, transitive inequality."
+                    "yes", "Transitive property.", "It illustrates the transitive property, which states that if one quantity is greater than a second, and the second is greater than a third, then the first is greater than the third."
                 ),
                 new SyllogismRiddle(
                     "No reptiles are warm-blooded. All snakes are reptiles. Therefore, no snakes are warm-blooded. Is this valid?",
-                    "yes", "Check logical conclusion.", "Valid syllogism."
+                    "yes", "Check logical conclusion.", "No reptiles are warm-blooded."
                 )
             };
             break;
