@@ -8,9 +8,9 @@ import java.util.Collections;
 
 public class Logic_Enhancement {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        boolean exit = false;
-
+        Scanner scanner = new Scanner(System.in); // Scanner for user input
+        boolean exit = false; // Flag to control the main menu loop
+         // Main menu loop
         while (!exit) {
             System.out.println("\t\t\t\t\tWelcome to Puzzle-Based Learning Game");
             System.out.println("\t\t\tIntegrating Game Innovation and Logical Enhancement");
@@ -21,39 +21,41 @@ public class Logic_Enhancement {
             System.out.println("4. Exit");
             System.out.print("Choose a game: ");
             int gameChoice = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine(); // Consume newline
 
+            // Handle user's game selection
            switch (gameChoice) {
     case 1:
-        WordCrossMenu.start(scanner);
+        WordCrossMenu.start(scanner); // Start Word Cross game
         break;
     case 2:
-        WordScrambleMenu.start(scanner);
+        WordScrambleMenu.start(scanner); // Start Word Scramble game
         break;
     case 3:
-        LogicRiddleMenu.start(scanner);
+        LogicRiddleMenu.start(scanner); // Start Logic Riddle Adventure
         break;
     case 4:
         System.out.println("Thanks for playing!");
-        exit = true;
+        exit = true; // Exit the main loop
         break;
     default:
         System.out.println("Invalid choice! Try again.");
             }
         }
 
-        scanner.close();
+        scanner.close();  // Close scanner when exiting
     }
 }
-
+// Word Cross Menu class handles difficulty selection
 class WordCrossMenu {
     public static void start(Scanner scanner) {
         System.out.println("\nChoose difficulty for Word Cross");
         System.out.println("1. Easy 2. Medium 3. Hard");
         System.out.print("Choose difficulty: ");
         int difficulty = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();  // Consume newline
 
+         // Launch the corresponding difficulty level
         switch (difficulty) {
     case 1:
         WordCross.start(scanner);
@@ -68,13 +70,17 @@ class WordCrossMenu {
         System.out.println("Invalid difficulty!");
 }
     }
+    // Generic method to play Word Cross game
     static void playWordGame(Scanner scanner, String[] correctAnswers) {
         Set<String> foundAnswers = new HashSet<>();
         int score = 0;
+        // Loop until all words are found
         while (foundAnswers.size() < correctAnswers.length) {
             System.out.print("\nEnter a word you found: ");
             String answer = scanner.nextLine().toUpperCase();
             boolean correct = false;
+            
+            // Check if the entered word is correct and not already found
             for (String w : correctAnswers) {
                 if (w.equals(answer) && !foundAnswers.contains(w)) {
                     foundAnswers.add(w);
@@ -89,7 +95,7 @@ class WordCrossMenu {
         System.out.println("You found all words! Score: " + score);
     }
 }
-
+// Easy Word Cross puzzle
 class WordCross {
     public static void start(Scanner scanner) {
         System.out.println("\nC A T F I S H Q W E R\nZ X M O L K P J N V B\nB I R D T Y U I O P A\nH J K G D S F L C V M\nA P P L E R T Y U I O\nQ W E D T L I O N P A\nT R E E Z X C V B N M\nK J H S S U N Q W E R\nB E A R Y U I O P L K\nM N B V M O O N Q W E");
@@ -97,7 +103,7 @@ class WordCross {
         WordCrossMenu.playWordGame(scanner, correctAnswers);
     }
 }
-
+// Hard Word Cross puzzle
 class WordMedium {
     public static void start(Scanner scanner) {
         System.out.println("\nR I V E R S T O N E Q W\nM X U N T A I N P L K J\nF O R E S T Y Z A S D F\nO C E A N L P A S D G H\nB R E E Z E H G F D J K\nS H A D O W A L I G B N\nT H U N D E R M O N Q W\nF L O W E R C L O U P A\nM E A D O W R A I N Z X\nS U N S E T N I G H C V\nS T A R F L I G H T M N\nC L O U D S K Y B O A R");
@@ -105,7 +111,7 @@ class WordMedium {
         WordCrossMenu.playWordGame(scanner, correctAnswers);
     }
 }
-
+// Hard Word Cross puzzle
 class WordHard {
     public static void start(Scanner scanner) {
         System.out.println("\nW O L F X R A I N B O W M Q\nQ T A E L E A F P M C V Z K\nS L W O R L D G B N A H Y J\nH F L E O R A T E L T K U P\nA E R O U D M S F O E N C Q\nD R E V I R P L J D F X M A\nO S T A R M O O N A L K B E\nM N U S N O W Q K R Y L P F\nE C R E V I R E V I R G H T\nB A T T E R F L Y Z X C V B\nH A C K Q W E R T Y U I O P\nL I B R A R Y A S D F G H J\nF U N C T I O N K L Z X C V\nS E N S O R Q W E R T Y U I\nP E R I P H E R A L M N B V");
@@ -113,16 +119,17 @@ class WordHard {
         WordCrossMenu.playWordGame(scanner, correctAnswers);
     }
 }
-
+// Word Scramble Menu
 class WordScrambleMenu {
     public static void start(Scanner scanner) {
         System.out.println("\nChoose difficulty for Word Scramble: 1. Easy 2. Medium 3. Hard");
         System.out.print("Choose difficulty: ");
         int choice = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine(); // Consume newline
 
        List<String> words;
 
+// Set words according to difficulty
 switch (choice) {
     case 1:
         words = Arrays.asList("cat","tree","book","frog","game","dog","fish","milk","ball","star");
@@ -137,17 +144,20 @@ switch (choice) {
         System.out.println("Invalid difficulty!");
         words = Collections.emptyList();
 }
-
+// Play scramble if words are available
 if (!words.isEmpty()) {
     playScramble(scanner, words);
 }
-    }        
+    }     
+    // Scramble and play word guessing
     private static void playScramble(Scanner scanner, List<String> words) {
-        Collections.shuffle(words);
+        Collections.shuffle(words); // Randomize words
         int score = 0;
+        
+        // Limit to 10 words
         for (int i = 0; i < Math.min(10, words.size()); i++) {
             String word = words.get(i);
-            String scrambled = Scrambler.scramble(word);
+            String scrambled = Scrambler.scramble(word); // Scramble letters
             System.out.println("\nScrambled word: " + scrambled);
             System.out.print("Guess: ");
             String guess = scanner.nextLine().trim().toLowerCase();
@@ -161,25 +171,25 @@ if (!words.isEmpty()) {
         System.out.println("Completed! Score: " + score + "/10");
     }
 }
-
+// Helper class to scramble words
 class Scrambler {
     public static String scramble(String word) {
         List<Character> chars = new ArrayList<>();
         for (char c : word.toCharArray()) chars.add(c);
-        Collections.shuffle(chars);
+        Collections.shuffle(chars); // Shuffle characters
         StringBuilder sb = new StringBuilder();
         for (char c : chars) sb.append(c);
         return sb.toString();
     }
 }
-
+// Logic Riddle Menu starter
 class LogicRiddleMenu {
     public static void start(Scanner scanner) {
         GameRiddle game = new GameRiddle(scanner);
         game.play();
     }
 }
-    
+// Abstract Riddle class to define structure    
 abstract class Riddle {
     private final String question;
     private final String answer;
@@ -201,19 +211,19 @@ abstract class Riddle {
     public abstract void display();
     public abstract boolean checkAnswer(String input);
 }
-
+// Deductive riddle type
 class DeductiveRiddle extends Riddle {
     public DeductiveRiddle(String q, String a, String h, String e) { super(q, a, h, e); }
     public void display() { System.out.println("Deductive Riddle: " + getQuestion()); System.out.println("Hint: " + getHint()); }
     public boolean checkAnswer(String input) { return input.equalsIgnoreCase(getAnswer()); }
 }
-
+// Syllogism riddle type
 class SyllogismRiddle extends Riddle {
     public SyllogismRiddle(String q, String a, String h, String e) { super(q, a, h, e); }
     public void display() { System.out.println("Syllogism Riddle: " + getQuestion()); System.out.println("Hint: " + getHint()); }
     public boolean checkAnswer(String input) { return input.equalsIgnoreCase(getAnswer()); }
 }
-
+// Main logic for the riddle game
 class GameRiddle {
     private Riddle[] riddles;
     private int currentRiddleIndex;
@@ -224,7 +234,7 @@ class GameRiddle {
         this.scanner = scanner;
         currentRiddleIndex = 0;
     }
-
+    // Initialize riddles based on difficulty
    private void initializeRiddles(String difficulty) {
     this.difficulty = difficulty;
 
@@ -298,7 +308,7 @@ class GameRiddle {
             initializeRiddles("normal");
     }
 }
-
+     // Main gameplay loop
     public void play() {
         System.out.println("Choose difficulty level: easy, normal, hard.");
         String diffInput = scanner.nextLine().trim().toLowerCase();
@@ -309,6 +319,7 @@ class GameRiddle {
         initializeRiddles(diffInput);
         System.out.println("\nSolve riddles to progress through the adventure!\n");
 
+        // Loop through all riddles
         while (currentRiddleIndex < riddles.length) {
             clearConsole();
             System.out.println("Room " + (currentRiddleIndex + 1) + " of " + riddles.length);
@@ -316,6 +327,7 @@ class GameRiddle {
             System.out.print("Your answer: ");
             String input = scanner.nextLine().trim();
 
+            // Check answer
             if (riddles[currentRiddleIndex].checkAnswer(input)) {
                 System.out.println("Correct! " + riddles[currentRiddleIndex].getExplanation());
                 System.out.println("Press Enter to continue...");
@@ -343,7 +355,7 @@ class GameRiddle {
         clearConsole();
         System.out.println("Congratulations! You completed the Logic Riddle Adventure on " + difficulty + " difficulty!");
     }
-
+    // Clears console output for a cleaner experience
   private void clearConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
