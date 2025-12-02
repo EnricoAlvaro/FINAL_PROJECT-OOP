@@ -23,15 +23,22 @@ public class Logic_Enhancement {
             int gameChoice = scanner.nextInt();
             scanner.nextLine(); 
 
-            switch (gameChoice) {
-                case 1 -> WordCrossMenu.start(scanner);
-                case 2 -> WordScrambleMenu.start(scanner);
-                case 3 -> LogicRiddleMenu.start(scanner);
-                case 4 -> {
-                    System.out.println("Thanks for playing!");
-                    exit = true;
-                }
-                default -> System.out.println("Invalid choice! Try again.");
+           switch (gameChoice) {
+    case 1:
+        WordCrossMenu.start(scanner);
+        break;
+    case 2:
+        WordScrambleMenu.start(scanner);
+        break;
+    case 3:
+        LogicRiddleMenu.start(scanner);
+        break;
+    case 4:
+        System.out.println("Thanks for playing!");
+        exit = true;
+        break;
+    default:
+        System.out.println("Invalid choice! Try again.");
             }
         }
 
@@ -48,13 +55,19 @@ class WordCrossMenu {
         scanner.nextLine(); 
 
         switch (difficulty) {
-            case 1 -> WordCross.start(scanner);
-            case 2 -> WordMedium.start(scanner);
-            case 3 -> WordHard.start(scanner);
-            default -> System.out.println("Invalid difficulty!");
-        }
+    case 1:
+        WordCross.start(scanner);
+        break;
+    case 2:
+        WordMedium.start(scanner);
+        break;
+    case 3:
+        WordHard.start(scanner);
+        break;
+    default:
+        System.out.println("Invalid difficulty!");
+}
     }
-
     static void playWordGame(Scanner scanner, String[] correctAnswers) {
         Set<String> foundAnswers = new HashSet<>();
         int score = 0;
@@ -106,21 +119,29 @@ class WordScrambleMenu {
         System.out.println("\nChoose difficulty for Word Scramble: 1. Easy 2. Medium 3. Hard");
         System.out.print("Choose difficulty: ");
         int choice = scanner.nextInt();
-        scanner.nextLine(); // consume newline
+        scanner.nextLine(); 
 
-        List<String> words = switch (choice) {
-            case 1 -> Arrays.asList("cat","tree","book","frog","game","dog","fish","milk","ball","star");
-            case 2 -> Arrays.asList("planet","guitar","coffee","puzzle","school","window","mother","castle","silver","orange");
-            case 3 -> Arrays.asList("programming","microphone","imagination","astronomy","laboratory","television","revolution","dictionary","architecture","mathematics");
-            default -> {
-                System.out.println("Invalid difficulty!");
-                yield Collections.emptyList();
-            }
-        };
+       List<String> words;
 
-        if (!words.isEmpty()) playScramble(scanner, words);
-    }
+switch (choice) {
+    case 1:
+        words = Arrays.asList("cat","tree","book","frog","game","dog","fish","milk","ball","star");
+        break;
+    case 2:
+        words = Arrays.asList("planet","guitar","coffee","puzzle","school","window","mother","castle","silver","orange");
+        break;
+    case 3:
+        words = Arrays.asList("programming","microphone","imagination","astronomy","laboratory","television","revolution","dictionary","architecture","mathematics");
+        break;
+    default:
+        System.out.println("Invalid difficulty!");
+        words = Collections.emptyList();
+}
 
+if (!words.isEmpty()) {
+    playScramble(scanner, words);
+}
+    }        
     private static void playScramble(Scanner scanner, List<String> words) {
         Collections.shuffle(words);
         int score = 0;
@@ -158,8 +179,7 @@ class LogicRiddleMenu {
         game.play();
     }
 }
-
-// Riddle Classes
+    
 abstract class Riddle {
     private final String question;
     private final String answer;
@@ -205,30 +225,79 @@ class GameRiddle {
         currentRiddleIndex = 0;
     }
 
-    private void initializeRiddles(String difficulty) {
-        this.difficulty = difficulty;
-        switch (difficulty.toLowerCase()) {
-            case "easy" -> riddles = new Riddle[]{
-                new DeductiveRiddle("If it rains, the ground is wet. It is raining. Is the ground wet?","yes","Think about cause and effect.","If the condition is met, the result follows."),
-                new SyllogismRiddle("All cats are mammals. Some mammals are pets. Are all cats pets?","no","Not all mammals are pets.","Middle term not distributed."),
-                new DeductiveRiddle("David's parents have three sons: Snap, Crackle, and what is the name of the third son?","David","Think about the riddle setup.","Trick riddle relying on deductive reasoning."),
-                new SyllogismRiddle("What can you break, even if you never pick it up or touch it?","A promise","Can be broken without contact.","Intangible thing.")
+   private void initializeRiddles(String difficulty) {
+    this.difficulty = difficulty;
+
+    switch (difficulty.toLowerCase()) {
+
+        case "easy":
+            riddles = new Riddle[] {
+                new DeductiveRiddle(
+                    "If it rains, the ground is wet. It is raining. Is the ground wet?",
+                    "yes", "Think about cause and effect.", "If the condition is met, the result follows."
+                ),
+                new SyllogismRiddle(
+                    "All cats are mammals. Some mammals are pets. Are all cats pets?",
+                    "no", "Not all mammals are pets.", "Middle term not distributed."
+                ),
+                new DeductiveRiddle(
+                    "David's parents have three sons: Snap, Crackle, and what is the name of the third son?",
+                    "David", "Think about the riddle setup.", "Trick riddle relying on deductive reasoning."
+                ),
+                new SyllogismRiddle(
+                    "What can you break, even if you never pick it up or touch it?",
+                    "A promise", "Can be broken without contact.", "Intangible thing."
+                )
             };
-            case "normal" -> riddles = new Riddle[]{
-                new DeductiveRiddle("If all roses are flowers and some flowers fade quickly, do all roses fade quickly?","no","Think about the logic.","Conclusion doesn't follow from premise."),
-                new SyllogismRiddle("All men are mortal. Socrates is a man. Therefore, Socrates is mortal. What type of reasoning is this?","syllogism","Classic logical argument.","Syllogism with two premises and conclusion."),
-                new DeductiveRiddle("If A > B and B > C, then A > C. Is this always true?","yes","Transitive property.","Yes, transitive inequality."),
-                new SyllogismRiddle("What goes up but never comes down?","Age","Represents time passed.","Time passes forward.")
+            break;
+
+        case "normal":
+            riddles = new Riddle[] {
+                new DeductiveRiddle(
+                    "If all roses are flowers and some flowers fade quickly, do all roses fade quickly?",
+                    "no", "Think about the logic.", "Conclusion doesn't follow from premise."
+                ),
+                new SyllogismRiddle(
+                    "All men are mortal. Socrates is a man. Therefore, Socrates is mortal. What type of reasoning is this?",
+                    "syllogism", "Classic logical argument.", "Syllogism with two premises and conclusion."
+                ),
+                new DeductiveRiddle(
+                    "If A > B and B > C, then A > C. Is this always true?",
+                    "yes", "Transitive property.", "Yes, transitive inequality."
+                ),
+                new SyllogismRiddle(
+                    "What goes up but never comes down?",
+                    "Age", "Represents time passed.", "Time passes forward."
+                )
             };
-            case "hard" -> riddles = new Riddle[]{
-                new DeductiveRiddle("If all roses are flowers and some flowers fade quickly, do all roses fade quickly?","no","Think about the logic.","Conclusion doesn't follow."),
-                new SyllogismRiddle("All men are mortal. Socrates is a man. Therefore, Socrates is mortal. What type of reasoning is this?","syllogism","Classic example.","Syllogism."),
-                new DeductiveRiddle("If A > B and B > C, then A > C. Is this always true?","yes","Transitive property.","Yes, transitive inequality."),
-                new SyllogismRiddle("No reptiles are warm-blooded. All snakes are reptiles. Therefore, no snakes are warm-blooded. Is this valid?","yes","Check logical conclusion.","Valid syllogism.")
+            break;
+
+        case "hard":
+            riddles = new Riddle[] {
+                new DeductiveRiddle(
+                    "If all roses are flowers and some flowers fade quickly, do all roses fade quickly?",
+                    "no", "Think about the logic.", "Conclusion doesn't follow."
+                ),
+                new SyllogismRiddle(
+                    "All men are mortal. Socrates is a man. Therefore, Socrates is mortal. What type of reasoning is this?",
+                    "syllogism", "Classic example.", "Syllogism."
+                ),
+                new DeductiveRiddle(
+                    "If A > B and B > C, then A > C. Is this always true?",
+                    "yes", "Transitive property.", "Yes, transitive inequality."
+                ),
+                new SyllogismRiddle(
+                    "No reptiles are warm-blooded. All snakes are reptiles. Therefore, no snakes are warm-blooded. Is this valid?",
+                    "yes", "Check logical conclusion.", "Valid syllogism."
+                )
             };
-            default -> { System.out.println("Invalid difficulty. Defaulting to normal."); initializeRiddles("normal"); }
-        }
+            break;
+
+        default:
+            System.out.println("Invalid difficulty. Defaulting to normal.");
+            initializeRiddles("normal");
     }
+}
 
     public void play() {
         System.out.println("Choose difficulty level: easy, normal, hard.");
@@ -275,8 +344,9 @@ class GameRiddle {
         System.out.println("Congratulations! You completed the Logic Riddle Adventure on " + difficulty + " difficulty!");
     }
 
-    private void clearConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
+   private void clearConsole() {
+    for (int i = 0; i < 50; i++) 
+        System.out.println();
+}
+
 }
