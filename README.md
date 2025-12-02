@@ -1,6 +1,6 @@
 # FINAL_PROJECT-OOP
 
-Puzzle-Based Learning Game: Integrating Game Innovation and Logical Enhancement
+Integrating Game Innovation and Logical Enhancement
 
 # Description / Overview
 
