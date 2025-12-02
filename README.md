@@ -20,13 +20,13 @@ Inheritance
 
 • DeductiveRiddle and SyllogismRiddle inherit from the abstract class Riddle.
 
-• They override the abstract methods display() and checkAnswer().
+• They implement the abstract methods display() and checkAnswer().
 
 Polymorphism
 
 • The Riddle array stores different riddle objects (both deductive and syllogism), demonstrating polymorphic behavior.
 
-• Method overriding allows different display styles for each riddle type.
+• Overriding methods enables different display styles for each riddle type.
 
 Abstraction
 
@@ -55,7 +55,7 @@ Main Classes and Roles
 
 • GameRiddle – Controls the riddle adventure flow, difficulty, and scoring.
 
-• Text-Based Class Diagram
+• Class Structure Overview (Text-Based)
 
     Logic_Enhancement
      ├── WordCrossMenu
@@ -80,21 +80,13 @@ Main Classes and Roles
 
 # Steps
 
-1. Compile all Java files:
+Step 1: Compile all Java files: javac *.java
 
-2. javac *.java
+Step 2: Run the main program: java Logic_Enhancement
 
-3. Run the main program: java Logic_Enhancement
+Step 3: Use the menu to select from: Word Cross, Word Scramble, Logic Riddle Adventure
 
-4. Use the menu to select from:
-
-        - Word Cross
-
-        - Word Scramble
-
-        - Logic Riddle Adventure
-
-5. Exit
+Step 4: Exit
 
 # Sample Output
 
@@ -122,7 +114,7 @@ Main Classes and Roles
 
 # Author and Acknowledgement
 
-• This project would not have been possible without the dedication, effort, and collaborative skills of Enrico Alvaro, Andrei Lusterio, and Kayelene Amaira Vital. Specially thanks to our instructor Sir Emmanuel Charlie Enriquez who provided a clear instruction and value feedback throughout the development of this work.
+• This project would not have been possible without the dedication, effort, and collaborative skills of Enrico Alvaro, Andrei Lusterio, and Kayelene Amaira Vital. Special thanks to our instructor Sir Emmanuel Charlie Enriquez who provided clear instructions and valuable feedback throughout the development of this work.
 
 # Other Sections You May Include
 
