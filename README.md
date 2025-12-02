@@ -77,6 +77,8 @@ Main Classes and Roles
     • Java JDK 17+ installed
 
     • Terminal or command prompt
+    
+    • Java online compiler
 
 # Steps
 
