@@ -344,9 +344,9 @@ class GameRiddle {
         System.out.println("Congratulations! You completed the Logic Riddle Adventure on " + difficulty + " difficulty!");
     }
 
-   private void clearConsole() {
-    for (int i = 0; i < 50; i++) 
-        System.out.println();
+  private void clearConsole() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 }
 
-}
