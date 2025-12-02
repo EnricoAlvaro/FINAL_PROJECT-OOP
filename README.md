@@ -10,25 +10,25 @@ This program is designed to help a user to enhance their logical thinking skills
 
 • This project applies several Object-Oriented Programming (OOP) concepts:
 
-# Encapsulation
+Encapsulation
 
 • Riddle properties (question, answer, hint, explanation) are stored as private fields with public getters.
 
 • Game logic for each puzzle is contained within its own class.
 
-# Inheritance
+Inheritance
 
 • DeductiveRiddle and SyllogismRiddle inherit from the abstract class Riddle.
 
 • They override the abstract methods display() and checkAnswer().
 
-# Polymorphism
+Polymorphism
 
 • The Riddle array stores different riddle objects (both deductive and syllogism), demonstrating polymorphic behavior.
 
 • Method overriding allows different display styles for each riddle type.
 
-# Abstraction
+Abstraction
 
 • Riddle is an abstract class defining the structure and behavior of all riddles.
 
